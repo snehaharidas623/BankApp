@@ -1,0 +1,36 @@
+<div class="text-primary">
+  <h1>{{aim}}</h1>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="container  w-50 mt-5">
+            <h1 class="text-center mt-5 text-white">LOGIN FORM</h1>
+            <form>
+
+                <div class="row mb-3">
+
+                  <div class="col-sm-10  ms-4 ">
+                    <input type="text" #acno name="acno"  class="form-control" id="" placeholder="Account Number" >
+                  
+                  </div>
+                </div>
+                <div class="row mb-3 ">
+                  <div class="col-sm-10 mt-3 ms-4">
+                    <input name="psw" #psw  type="password" class="form-control"  placeholder="Password"  id="pid">
+                  </div>
+                </div>
+<div class="row mb-3">
+<div class="col-sm-10 ms-5  ">
+    <button type="submit" (click)="login(acno,psw)" class="btn btn-dark text-center  mt-2 w-50" >Login</button>
+
+</div>  
+</div>   
+<div>
+  <h6 class="ms-5 mt-3" ><span style="color:aliceblue">New User? </span><a href="">RegisterHere</a> </h6>
+
+</div>
+                </form>
+        </div>
+    </div>
+
+</div>
