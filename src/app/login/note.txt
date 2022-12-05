@@ -16,3 +16,14 @@ binding methods
          1.2.1  event-binding     -  (eventname)="method name()"
          1.2.2  event-binding using $event - (eventname)="method name($argument)"
          1.2.3 event binding using template rendering variable #variable
+
+2) two way binding
+------------------
+  2.1  ngmodel -- [(ngmodel)] ="value"
+      it comes from FormsModule. Its a third party module so we want to install  
+
+
+      Redirection in angular
+      ---------------------
+navigateByUrl -method used to Redirection
+router     -class            

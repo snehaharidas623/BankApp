@@ -10,18 +10,18 @@
                 <div class="row mb-3">
 
                   <div class="col-sm-10  ms-4 ">
-                    <input type="text" #acno name="acno"  class="form-control" id="" placeholder="Account Number" >
+                    <input type="text" [(ngModel)]="acno"   class="form-control" id="" placeholder="Account Number"  name="acno">
                   
                   </div>
                 </div>
                 <div class="row mb-3 ">
                   <div class="col-sm-10 mt-3 ms-4">
-                    <input name="psw" #psw  type="password" class="form-control"  placeholder="Password"  id="pid">
+                    <input   type="password" [(ngModel)]="psw" class="form-control"  placeholder="Password"  id="pid" name="psw">
                   </div>
                 </div>
 <div class="row mb-3">
 <div class="col-sm-10 ms-5  ">
-    <button type="submit" (click)="login(acno,psw)" class="btn btn-dark text-center  mt-2 w-50" >Login</button>
+    <button type="submit" (click)="login()" class="btn btn-dark text-center  mt-2 w-50" >Login</button>
 
 </div>  
 </div>   
