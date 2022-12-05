@@ -27,3 +27,23 @@ binding methods
       ---------------------
 navigateByUrl -method used to Redirection
 router     -class            
+
+
+Dependency Injection
+-------------------
+used for oru clasinte akath lle method ne vere classne use akkan vendit
+this step used in construcor
+
+steps
+-----
+* First give access specifier- public/private
+* Then give variable then put colon and give class name
+eg:-  constructor(private variablename:Router)
+ default acees specifier will be public
+
+
+ Angular Services
+ ----------------
+ * Databses are using in every compment so instead of using them in every component,
+    we can use angular service technology
+ * Command for genarating service :-  ng g s servicename
