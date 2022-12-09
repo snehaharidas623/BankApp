@@ -47,3 +47,19 @@ eg:-  constructor(private variablename:Router)
  * Databses are using in every compment so instead of using them in every component,
     we can use angular service technology
  * Command for genarating service :-  ng g s servicename
+
+
+ Angular directives
+ ------------------
+ 1- structural directives - to handle structured data in view of a component
+   -nfFor - can directly apply in html
+
+
+Forms in angular
+---------------
+we can create forms in 2 way
+1) TEMPLATE DRIVEN FORM 
+    - form is created normally using html.validation of these type of forms is difficult in this method. so we convert into 
+    model driven form for easy validation.
+2) MODEL DRIVEN FORM 
+

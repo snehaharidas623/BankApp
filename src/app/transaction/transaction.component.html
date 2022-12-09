@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+        <div >
+            <h1 class="text-center text-white mt-5">Transaction History</h1>
+
+            <table  class="mt-5 container w-50 p-5 text-center  text-white border border-white" style="background:rgba(50, 201, 70, 0.5); border-radius: 10px;">
+
+                <thead class="ms-5 border border-white ">
+                    
+                 <tr  class="ms-5">
+                        <th class="border border-white">TYPE</th>
+                        <th class="border border-white">AMOUNT</th>
+                    </tr>
+               
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of transaction">
+                        <td class="border border-white" style="font-weight: bolder; font-size: larger; color: wheat;">{{i.type}}</td>
+                        <td class="border border-white" style="font-weight: bolder; font-size: larger; color: wheat;">{{i.amount}}</td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
