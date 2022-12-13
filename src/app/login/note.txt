@@ -53,6 +53,7 @@ eg:-  constructor(private variablename:Router)
  ------------------
  1- structural directives - to handle structured data in view of a component
    -nfFor - can directly apply in html
+   -ngIf
 
 
 Forms in angular
@@ -61,5 +62,31 @@ we can create forms in 2 way
 1) TEMPLATE DRIVEN FORM 
     - form is created normally using html.validation of these type of forms is difficult in this method. so we convert into 
     model driven form for easy validation.
+
 2) MODEL DRIVEN FORM 
+   -to crete this form we use the method reactive form
+   -to create reactive form we want - ReactiveFormsModule
+   -FormBuilder - class of ReactiveFormsModule
+     -it contain a group,array and a control
+
+
+     validate Model Form
+     -------------------
+     validator class-inbuilt class in angular. it includes methods for apply validation
+
+access errors in validator route
+--------------------------------
+    this.registerForm.get('uname')?.errors
+          -valid -if valid we get empty response
+          -invalid -if invalid there will be a content
+
+
+  LOCAL STORAGE IN ANGULAR 
+  ------------------------
+  -localstorage.setItem() - Store 
+  -localstorage.getItem() -access 
+  -localstorage.removeItem() -delete
+
+
+
 

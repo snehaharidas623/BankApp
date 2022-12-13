@@ -4,30 +4,39 @@
       <div class="col-md-12">
           <div class="container  w-50 mt-5">
               <h1 class="text-center mt-5 text-white">REGISTER FORM</h1>
-              <form (ngSubmit)="register()">
+              <form (ngSubmit)="register()" [formGroup]="registerForm" >
   
                   <div class="row mb-3">
   
                     <div class="col-sm-10  ms-4 ">
-                      <input type="text" name="uname" [(ngModel)]="uname"  class="form-control"  placeholder="UserName" >
+                      <input type="text" name="uname" formControlName="uname"  class="form-control"  placeholder="UserName" >
                     
+                    </div>
+                    <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+                      <p class="text-danger">Username must be in Letters</p>
                     </div>
                   </div>
                   <div class="row mb-3">
   
                     <div class="col-sm-10  ms-4 ">
-                      <input type="text" name="acno" [(ngModel)]="acno"  class="form-control"  placeholder="AccountNumber" >
+                      <input type="text" name="acno"   class="form-control" formControlName="acno"  placeholder="AccountNumber" >
                     
+                    </div>
+                    <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched">
+                      <p class="text-danger"> AcountNumber must be digits</p>
                     </div>
                   </div>
                   <div class="row mb-3 ">
-                    <div class="col-sm-10 mt-3 ms-4">
-                      <input   type="password" name="psw" class="form-control" [(ngModel)]="psw"  placeholder="Password"   >
+                    <div class="col-sm-10  ms-4">
+                      <input   type="password" name="psw" class="form-control"  formControlName="psw"  placeholder="Password"   >
+                    </div>
+                    <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched">
+                      <p class="text-danger">Password must be Digits</p>
                     </div>
                   </div>
   <div class="row mb-3">
   <div class="col-sm-10 ms-5  ">
-      <button type="submit" (click)="register()" class="btn btn-dark text-center  mt-2 w-50" >Register</button>
+      <button type="submit"  class="btn btn-dark text-center  mt-2 w-50" >Register</button>
   
   </div>  
   </div>   

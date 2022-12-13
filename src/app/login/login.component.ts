@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -11,18 +12,22 @@ export class LoginComponent {
   
   aim= "Your Perfect Banking Partner"
   data="enter ac no"
-  acno=''
-  psw=''
+  // acno=''
+  // psw=''
 
-constructor(private router:Router,private ds:DataService){}
+constructor(private router:Router,private ds:DataService,private fb:FormBuilder){}
+loginForm=this.fb.group({acno:['',[Validators.required,Validators.pattern('[0-9]{4}')]],
+psw:['',[Validators.required,Validators.pattern('[0-9]+')]]})
 ngOnInit(): void {
 
 }
 
+
 login(){
-  var acno=this.acno
-  var psw=this.psw
+  var acno=this.loginForm.value.acno
+  var psw=this.loginForm.value.psw
   const result=this.ds.login(acno,psw)
+  if(this.loginForm.valid){
   if(result){
     alert('login success')
     this.router.navigateByUrl('dashboard')
@@ -31,8 +36,15 @@ login(){
     alert('incorect username or paswrd')
   }
 }
+else{
+  alert('invalid form')
+}
 }
 
+
+
+
+}
 // login(a:any,b:any){
 //   this.acno=a.value
 //   this.psw=b.value
