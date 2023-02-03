@@ -49,11 +49,14 @@ eg:-  constructor(private variablename:Router)
  * Command for genarating service :-  ng g s servicename
 
 
- Angular directives
+ Angular directives - used to manage dom
  ------------------
  1- structural directives - to handle structured data in view of a component
    -nfFor - can directly apply in html
    -ngIf
+
+2- component directives
+3- attribute directives
 
 
 Forms in angular
@@ -86,6 +89,70 @@ access errors in validator route
   -localstorage.setItem() - Store 
   -localstorage.getItem() -access 
   -localstorage.removeItem() -delete
+
+  Parent child component communication in Angular
+  -----------------------------------------------
+
+
+
+@Input - to shar edata from parent to child
+@Output - to shar edata from child to parent
+datas can only be shar evia selectors of component
+
+
+user defined Event creation in angular
+-------------------------------------
+EventEmitter - class used to create events (comes fro  angular core)
+emit() - to start the event
+
+
+  Date & Time in Angular
+  ----------------------
+  Date - class
+  - create an object of this date class to access date and time
+
+
+Angular pipe
+-----------
+to transform data from one form to another
+eg- date pipe
+
+npm i -used to clone from git
+
+
+CLIENT SERVER INTEGRATIOn
+-------------------------
+-------------------------
+
+http request creation
+--------------------
+httpClientModule -module
+HttpClient       -class
+
+
+asynchronous request solve in ts
+--------------------------------
+js-promise -resolve/reject
+              |         |
+              then()      catch()
+
+
+ts- observable -resolve/        reject
+                    |             |
+                subscribe()        catch()     
+
+Rxjs  -library used to solve asynchronous code in ts
+(reactive extension for js)                
+
+
+APPEND TOKEN IN HEADERS of api/http req
+-----------------------
+create HEADERS
+    HttpHeaders - class to create header object
+    eg-     let headers = new HttpHeaders()
+
+Append headers
+         headers.append('access-token', token)
 
 
 

@@ -26,25 +26,32 @@ ngOnInit(): void {
 login(){
   var acno=this.loginForm.value.acno
   var psw=this.loginForm.value.psw
-  const result=this.ds.login(acno,psw)
   if(this.loginForm.valid){
-  if(result){
-    alert('login success')
+  this.ds.login(acno,psw).subscribe((result:any)=>{
+    localStorage.setItem('currentacno',JSON.stringify( result.currentAcno))
+    localStorage.setItem('currentuser',JSON.stringify( result.currentUser))
+    localStorage.setItem('token',JSON.stringify( result.token))
+
+
+    alert(result.message)
     this.router.navigateByUrl('dashboard')
+  },
+  result=>{
+    alert(result.error.message)
   }
+  )
+}
+  
   else{
     alert('incorect username or paswrd')
   }
 }
-else{
-  alert('invalid form')
-}
 }
 
 
 
 
-}
+
 // login(a:any,b:any){
 //   this.acno=a.value
 //   this.psw=b.value

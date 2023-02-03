@@ -1,0 +1,2 @@
+frst create a server folder
+npm init - for getting package.json file

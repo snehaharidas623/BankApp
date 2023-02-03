@@ -14,37 +14,35 @@ export class RegisterComponent {
   // acno=''
   // psw=''
 
-  constructor(private ds:DataService, private router:Router,private fb:FormBuilder){
+  constructor(private ds: DataService, private router: Router, private fb: FormBuilder) {
 
   }
-  registerForm=this.fb.group({uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],
-  acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-  psw:['',[Validators.required,Validators.pattern('[0-9]+')]]
-})
-  ngOnInit(): void{}
+  registerForm = this.fb.group({
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+  })
+  ngOnInit(): void { }
 
-  register(){
-    var uname=this.registerForm.value.uname
-    var acno=this.registerForm.value.acno
-    var psw=this.registerForm.value.psw
-    if(this.registerForm.valid){
+  register() {
+    var uname = this.registerForm.value.uname
+    var acno = this.registerForm.value.acno
+    var psw = this.registerForm.value.psw
+    if (this.registerForm.valid) {
+      this.ds.register(acno, uname, psw).subscribe((result: any) => {
+        alert(result.message)
+        this.router.navigateByUrl('')
+      },
+      result=>{
+        alert(result.error.message)
+        this.router.navigateByUrl('')
 
-    const result=this.ds.register(acno,uname,psw)
-    if(result){
-      alert('registration success')
-      this.router.navigateByUrl('')
-
+      }
+      )
     }
-    else{
-      alert('user Already Exists')
-      this.router.navigateByUrl('')
-
+    else {
+      alert('invalid form')
     }
-
-
-  }
-  else{
-    alert('invalid form')
   }
 }
-}
+
